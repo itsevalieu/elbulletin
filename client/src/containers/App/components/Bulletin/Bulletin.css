@@ -1,0 +1,9 @@
+.bulletin {
+    align-items: center;
+    background-image: url('../../../../assets/bulletin.jpg');
+    border: 15px ridge #e0b995;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    min-height: 500px;
+}
