@@ -1,0 +1,17 @@
+.header {
+    align-items: center;
+    background: #fff;
+    border: 1px outset #ddd;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    margin: 10px;
+    transform: rotateZ(1deg);
+    width: 60%;
+}
+a {
+    color: #111;
+    font-family: 'serif';
+    font-size: 1.8em;
+    text-decoration: none;
+}
