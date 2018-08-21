@@ -34,5 +34,15 @@ div.article:after {
 
 /* Article Details */
 .article-details {
-    
+    border-bottom: 1px solid #ccc;
+}
+.article-details p {
+    font-size: 16px;
+}
+/* Article Body */
+.article-body p {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    text-indent: 3em;
 }

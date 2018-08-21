@@ -3,6 +3,11 @@ import './Bulletin.css';
 import Header from '../Header/Header';
 
 class Bulletin extends Component {
+
+  handleClick(e) {
+    console.log(e.target.dataset.article);
+  }
+
   render() {
     return (
       <div id='bulletin' className='bulletin'>
@@ -14,11 +19,11 @@ class Bulletin extends Component {
                 <a href='/'>Creative Writing</a>
               <div className='pushpin'></div>
             </div>
-            <div className='post'>
-              <a href='/#article'>
+            <div className='post' onClick={this.handleClick} data-article='themonk'>
+              <a href='/#article' data-article='themonk'>
                 <div className='pushpin'></div>
-                <p>The Monk</p>
-                <p>Short story about a father telling a story to his child about his days as a refugee living on an island.</p>
+                <p data-article='themonk'>The Monk</p>
+                <p data-article='themonk'>Short story about a father telling a story to his child about his days as a refugee living on an island.</p>
               </a>
             </div>
             <div className='post'>
