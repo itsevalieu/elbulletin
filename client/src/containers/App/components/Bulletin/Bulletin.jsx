@@ -7,7 +7,9 @@ class Bulletin extends Component {
     return (
       <div id='bulletin' className='bulletin'>
         <Header/>
-        <div>Cat</div>
+        <div id='posts'>
+          
+        </div>
       </div>
     );
   }

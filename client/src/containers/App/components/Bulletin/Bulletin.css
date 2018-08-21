@@ -1,4 +1,5 @@
 .bulletin {
+    align-content: center;
     align-items: center;
     background-image: url('../../../../assets/bulletin.jpg');
     border: 15px ridge #e0b995;
