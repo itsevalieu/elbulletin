@@ -5,9 +5,9 @@ div.article {
         0 4px 3px -2px rgba(0,0,0,.1),
         0 1px 1px 0 rgba(0,0,0,.2);
     font-size: 22px;
-    height: 500px;
+    min-fheight: 500px;
     list-style: none;
-    margin: 25px auto;
+    margin: 50px auto;
     padding: 50px;
     position: relative;
     text-align:center;
@@ -30,4 +30,9 @@ div.article:before, div.article:after {
 div.article:after {
     top: 4px;
     transform: rotate(-1deg) ;
+}
+
+/* Article Details */
+.article-details {
+    
 }
