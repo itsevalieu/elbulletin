@@ -15,6 +15,7 @@ mongoose.connect(mongoURL, { useNewUrlParser: true });
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors());
@@ -24,7 +25,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Router
-app.use('/api', require('./routes/article.js'));
+const articles = require('./routes/article.js');
+const posts = require('./routes/post.js');
+
+app.use('/api/articles', articles);
+app.use('/api/posts', posts);
 
 //Listener
 app.listen(PORT, function() {
