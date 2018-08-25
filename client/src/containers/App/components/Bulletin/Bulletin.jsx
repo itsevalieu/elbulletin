@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Link,
   Switch
 } from 'react-router-dom';
 import './Bulletin.css';
-import Header from '../Header/Header';
+import Header from './components/Header/Header';
+import Post from './components/Post/Post';
 
 class Bulletin extends Component {
   constructor(props) {
@@ -15,84 +15,33 @@ class Bulletin extends Component {
       literature: this.props.posts.literature,
       technical: this.props.posts.technical
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(e) {
+    e.preventDefault();
+    console.log(e.target.dataset.article);
   }
   render() {
     return (
       <Switch>
         <div id='bulletin' className='bulletin'>
-          <Header/>
+          <Header name={'E.L Bulletin'}/>
           <div id='posts' className='posts'>
             <section id='posts-creative'>
-              <div id='header' className='header'>
-                <div className='pushpin'></div>
-                  <a href='/'>Creative Writing</a>
-                <div className='pushpin'></div>
-              </div>
-              { 
-                this.state.creative.map((post, index) => (
-                  <Link key={index} to={post.path}>
-                    <div className='post' onClick={this.props.handleClick} data-article={post.path}>
-                        <div className='pushpin'></div>
-                        <p data-article={post.path}>{post.title}</p>
-                        <p data-article={post.path}>{post.summary}</p>
-                    </div>
-                  </Link>
-                ))
-              }
+              <Header name={'Creative Writing'}/>
+              { this.state.creative.map((post, index) => ( <Post post={post} index={index} handleClick={this.handleClick}/> )) }
             </section>
             <section id='posts-literature'>
-              <div id='header' className='header'>
-                <div className='pushpin'></div>
-                  <a href='/#article'>Literature Analysis</a>
-                <div className='pushpin'></div>
-              </div>
-              { 
-                this.state.literature.map((post, index) => (
-                  <Link key={index} to={post.path}>
-                    <div className='post' onClick={this.props.handleClick} data-article={post.path}>
-                        <div className='pushpin'></div>
-                        <p data-article={post.path}>{post.title}</p>
-                        <p data-article={post.path}>{post.summary}</p>
-                    </div>
-                  </Link>
-                ))
-              }
+              <Header name={'Literature Analysis'}/>
+              { this.state.literature.map((post, index) => ( <Post post={post} index={index}/> )) }
             </section>
             <section id='posts-research'>
-              <div id='header' className='header'>
-                <div className='pushpin'></div>
-                  <a href='/'>Research Papers</a>
-                <div className='pushpin'></div>
-              </div>
-              { 
-                this.state.research.map((post, index) => (
-                  <Link key={index} to={post.path}>
-                    <div className='post' onClick={this.props.handleClick} data-article={post.path}>
-                        <div className='pushpin'></div>
-                        <p data-article={post.path}>{post.title}</p>
-                        <p data-article={post.path}>{post.summary}</p>
-                    </div>
-                  </Link>
-                ))
-              }
+              <Header name={'Research Papers'}/>
+              { this.state.research.map((post, index) => ( <Post post={post} index={index}/> )) }
             </section>
             <section id='posts-technical'>
-              <div id='header' className='header'>
-                <div className='pushpin'></div>
-                  <a href='/'>Web Development</a>
-                <div className='pushpin'></div>
-              </div>
-              { 
-                this.state.technical.map((post, index) => (
-                  <Link key={index} to={post.path}>
-                    <div className='post' onClick={this.props.handleClick} data-article={post.path}>
-                        <div className='pushpin'></div>
-                        <p data-article={post.path}>{post.title}</p>
-                        <p data-article={post.path}>{post.summary}</p>
-                    </div>
-                  </Link>
-                ))
-              }
+              <Header name={'Web Development'}/>
+              { this.state.technical.map((post, index) => ( <Post post={post} index={index}/> )) }
             </section>
           </div>
         </div>

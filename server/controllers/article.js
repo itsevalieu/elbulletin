@@ -6,6 +6,14 @@ module.exports = {
         const data = await Article.find({});
         res.status(200).json({data});
     },
+    getSpecificArticle: async (req, res, next) => {
+        console.log(req.params.id);
+        const article_id = await Post.findOne({_id: req.params.id})
+            .then((post) => {
+                return post.article;
+            });
+        res.status(200).json({article_id});
+    },
     postArticle: async (req, res, next) => {
         const {
             title,
@@ -34,7 +42,9 @@ module.exports = {
             });
 
             //save post
-            await newPost.save();
+            newPost.save(function (err) {
+                if (err) return err;
+            });
         });
         //respond with message
         res.status(200).json({success: 'Successfully added to database!'});
