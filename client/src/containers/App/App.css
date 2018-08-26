@@ -1,0 +1,8 @@
+.pushpin {
+  background: #000;
+  border: 3px outset #888;
+  border-radius: 50px;
+  height: 15px;
+  margin: 10px;
+  width: 15px;
+}

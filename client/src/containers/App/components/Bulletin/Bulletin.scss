@@ -1,0 +1,12 @@
+.bulletin {
+    align-content: center;
+    align-items: center;
+    background-image: url('../../../../assets/bulletin.jpg');
+    border: 15px ridge #e0b995;
+    box-shadow: 5px 5px 5px #444;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    margin: 25px 25px;
+    min-height: 500px;
+}
