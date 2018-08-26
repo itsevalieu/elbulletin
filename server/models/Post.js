@@ -12,7 +12,7 @@ const postSchema = new Schema({
     },
     summary: {
         type: String
-    }
+    },
     article: {
         type: Schema.Types.ObjectId,
         ref: 'Article'
