@@ -17,12 +17,12 @@ class Bulletin extends Component {
       //   technical: this.props.posts.technical
       // }  
     }
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(e) {
-    e.preventDefault();
-    console.log(e.target.dataset.article);
-  }
+  // handleClick(e) {
+  //   e.preventDefault();
+  //   console.log(e.target);
+  // }
   // componentWillReceiveProps(nextProps) {
   //   console.log(nextProps);
   //   console.log(this.state);
@@ -46,19 +46,19 @@ class Bulletin extends Component {
           <div id='posts' className='posts'>
             <section id='posts-creative'>
               <Header name={'Creative Writing'}/>
-              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.handleClick}/> )) }
+              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
             <section id='posts-literature'>
               <Header name={'Literature Analysis'}/>
-              { this.props.posts.literature.map((post, index) => ( <Post key={index}  post={post} index={index}/> )) }
+              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
             <section id='posts-research'>
               <Header name={'Research Papers'}/>
-              { this.props.posts.research.map((post, index) => ( <Post key={index}  post={post} index={index}/> )) }
+              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
             <section id='posts-technical'>
               <Header name={'Web Development'}/>
-              { this.props.posts.technical.map((post, index) => ( <Post key={index}  post={post} index={index}/> )) }
+              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
           </div>
         </div>
