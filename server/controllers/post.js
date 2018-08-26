@@ -6,13 +6,17 @@ module.exports = {
         res.status(200).json({data});
     },
     postPost: async (req, res, next) => {
-        const { 
-           article,
-           project
+        const {
+            title,
+            summary,
+            article,
+            project
         } = req.body;
 
         //create new document
         const newPost = new Post({
+            title,
+            summary,
             article,
             project
         });
@@ -22,6 +26,8 @@ module.exports = {
     },
     updatePost: async (req, res, next) => {
         const { 
+            title,
+            summary,
             article,
             project
         } = req.body;
@@ -30,8 +36,10 @@ module.exports = {
             _id: req.params.id
         }, { 
             $set: {
-               article,
-               project
+                title,
+                summary,
+                article,
+                project
             }
         }, (err) => {
             if(err) return err;

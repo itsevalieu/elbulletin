@@ -7,6 +7,12 @@ const postSchema = new Schema({
         type: Schema.ObjectId,
         auto: true
     },
+    title: {
+        type: String
+    },
+    summary: {
+        type: String
+    }
     article: {
         type: Schema.Types.ObjectId,
         ref: 'Article'
