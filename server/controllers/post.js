@@ -9,6 +9,7 @@ module.exports = {
         const {
             title,
             summary,
+            category,
             article,
             project
         } = req.body;
@@ -17,6 +18,7 @@ module.exports = {
         const newPost = new Post({
             title,
             summary,
+            category,
             article,
             project
         });
@@ -28,6 +30,7 @@ module.exports = {
         const { 
             title,
             summary,
+            category,
             article,
             project
         } = req.body;
@@ -38,6 +41,7 @@ module.exports = {
             $set: {
                 title,
                 summary,
+                category,
                 article,
                 project
             }

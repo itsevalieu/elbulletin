@@ -17,6 +17,10 @@ const postSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Article'
     },
+    category: {
+        type: String,
+        enum: ['creative', 'literature', 'technical', 'research', 'project']
+    },
     project: {
         type: Schema.Types.ObjectId,
         ref: 'Project'
