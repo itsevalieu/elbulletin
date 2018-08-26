@@ -8,11 +8,11 @@ module.exports = {
     },
     getSpecificArticle: async (req, res, next) => {
         console.log(req.params.id);
-        const article_id = await Post.findOne({_id: req.params.id})
-            .then((post) => {
-                return post.article;
+        const article = await Article.findOne({_id: req.params.id})
+            .then((article) => {
+                return article;
             });
-        res.status(200).json({article_id});
+        res.status(200).json({article});
     },
     postArticle: async (req, res, next) => {
         const {
