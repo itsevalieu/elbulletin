@@ -25,8 +25,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Router
-const articles = require('./routes/article.js');
-const posts = require('./routes/post.js');
+const articles = require('./server/routes/article.js');
+const posts = require('./server/routes/post.js');
 
 app.use('/api/articles', articles);
 app.use('/api/posts', posts);
