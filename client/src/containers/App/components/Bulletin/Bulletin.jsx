@@ -10,10 +10,12 @@ class Bulletin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      creative: this.props.posts.creative,
-      research: this.props.posts.research,
-      literature: this.props.posts.literature,
-      technical: this.props.posts.technical
+      // posts: {
+      //   creative: this.props.posts.creative,
+      //   research: this.props.posts.research,
+      //   literature: this.props.posts.literature,
+      //   technical: this.props.posts.technical
+      // }  
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -21,6 +23,21 @@ class Bulletin extends Component {
     e.preventDefault();
     console.log(e.target.dataset.article);
   }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log(nextProps);
+  //   console.log(this.state);
+  //   if(nextProps.value !== this.state) {
+  //     this.setState({
+  //       isLoaded: true,
+  //       posts: {
+  //         creative: this.props.posts.creative,
+  //         research: this.props.posts.research,
+  //         literature: this.props.posts.literature,
+  //         technical: this.props.posts.technical
+  //       }
+  //     });
+  //   }
+  // }
   render() {
     return (
       <Switch>
@@ -29,19 +46,19 @@ class Bulletin extends Component {
           <div id='posts' className='posts'>
             <section id='posts-creative'>
               <Header name={'Creative Writing'}/>
-              { this.state.creative.map((post, index) => ( <Post post={post} index={index} handleClick={this.handleClick}/> )) }
+              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.handleClick}/> )) }
             </section>
             <section id='posts-literature'>
               <Header name={'Literature Analysis'}/>
-              { this.state.literature.map((post, index) => ( <Post post={post} index={index}/> )) }
+              { this.props.posts.literature.map((post, index) => ( <Post key={index}  post={post} index={index}/> )) }
             </section>
             <section id='posts-research'>
               <Header name={'Research Papers'}/>
-              { this.state.research.map((post, index) => ( <Post post={post} index={index}/> )) }
+              { this.props.posts.research.map((post, index) => ( <Post key={index}  post={post} index={index}/> )) }
             </section>
             <section id='posts-technical'>
               <Header name={'Web Development'}/>
-              { this.state.technical.map((post, index) => ( <Post post={post} index={index}/> )) }
+              { this.props.posts.technical.map((post, index) => ( <Post key={index}  post={post} index={index}/> )) }
             </section>
           </div>
         </div>
