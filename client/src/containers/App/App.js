@@ -28,7 +28,6 @@ class App extends Component {
     this.setState({
       articleId: e.target.dataset.article
     });
-    console.log(this.state.articleId);
   }
   componentDidMount(){
     axios(`http://elbulletin-db.herokuapp.com/api/posts/`)
