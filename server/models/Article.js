@@ -18,7 +18,7 @@ const articleSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['creative', 'literature', 'technical', 'research']
+        enum: ['creative', 'literature', 'technical', 'research', 'project']
     },
     summary: {
         type: String

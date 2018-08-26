@@ -40,6 +40,7 @@ module.exports = {
             const newPost = new Post({
                 title: newArticle.title,
                 summary: newArticle.summary,
+                category: newArticle.category,
                 article: newArticle._id
             });
 
