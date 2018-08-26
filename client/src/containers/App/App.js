@@ -18,16 +18,37 @@ class App extends Component {
         research: [],
         literature: [],
         technical: []
-      }
+      },
+      articleId: ''
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({
+      articleId: e.target.dataset.article
+    });
+    console.log(this.state.articleId);
   }
   componentDidMount(){
-    let posts = axios(`http://elbulletin-db.herokuapp.com/api/posts/`)
+    axios(`http://elbulletin-db.herokuapp.com/api/posts/`)
 		.then(({data}) => {
-      console.log(data.data);
+      let results = data.data;
+      let creativeResults = results.filter(post => post.category === 'creative');
+      let technicalResults = results.filter(post => post.category === 'technical');
+      let literatureResults = results.filter(post => post.category === 'literature');
+      let projectResults = results.filter(post => post.category === 'project');
+      let researchResults = results.filter(post => post.category === 'research');
+
       this.setState({
         isLoaded: true,
-        posts: data.data
+        posts: {
+          creative: creativeResults,
+          research: researchResults,
+          literature: literatureResults,
+          technical: technicalResults,
+          project: projectResults
+        }
       });
     }, (err) =>{
       this.setState({
@@ -40,12 +61,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} />
-          {
-            // if(artPath.match()) {
-            // }
-          }
-          {/* <Route exact path={this.state.renderPath} component={Article} article={this.state.articles}/> */}
+          <Bulletin posts={this.state.posts} handleClick={this.handleClick}/>
+          <Article articleId={this.state.articleId}/>
         </div>
       </Router>
     );
