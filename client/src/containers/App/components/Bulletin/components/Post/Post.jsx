@@ -7,11 +7,11 @@ import './Post.css';
 class Post extends Component {
   render() {
     return (
-        <Link key={this.props.index} to={this.props.post.path}>
-            <div className='post' onClick={this.props.handleClick} data-article={this.props.post.path}>
+        <Link to={`${this.props.post.article}`}>
+            <div className='post' onClick={this.props.handleClick} data-article={this.props.post.article}>
                 <div className='pushpin'></div>
-                <p data-article={this.props.post.path}>{this.props.post.title}</p>
-                <p data-article={this.props.post.path}>{this.props.post.summary}</p>
+                <p data-article={this.props.post.article}>{this.props.post.title}</p>
+                <p data-article={this.props.post.article}>{this.props.post.summary}</p>
             </div>
         </Link>
     );
