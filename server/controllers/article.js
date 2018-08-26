@@ -38,6 +38,8 @@ module.exports = {
 
             //create post for article
             const newPost = new Post({
+                title: newArticle.title,
+                summary: newArticle.summary,
                 article: newArticle._id
             });
 
