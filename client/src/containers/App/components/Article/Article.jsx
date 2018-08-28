@@ -14,7 +14,8 @@ class Article extends Component {
     return (
       <Switch>
         <div id='article' className='article'>
-          <div id='details' className='article-details'>
+        <iframe src="https://drive.google.com/file/d/1ZFkKzecPY0czJEJLaVWgwXo-JkKpumDo/preview" frameborder="0"></iframe>
+          {/* <div id='details' className='article-details'>
             <h1 id='title'>{this.props.article.title}</h1>
             <p id='author'>{this.props.article.author}</p>
             <p id='year'>{this.props.article.year}</p>
@@ -22,7 +23,7 @@ class Article extends Component {
           </div>
           <div id='body' className='article-body'> 
             <p>{this.props.article.body}</p> 
-          </div>
+          </div> */}
         </div>
       </Switch>
     );
