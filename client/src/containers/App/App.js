@@ -24,6 +24,7 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
+
     this.setState({
       articleId: e.target.dataset.article
     });
@@ -73,8 +74,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Bulletin posts={this.state.posts} handleClick={this.handleClick}/>
-          <Article article={this.state.article}/>
-            
+          <Article article={this.state.article} articleId= {this.state.articleId}/>
         </div>
       </Router>
     );

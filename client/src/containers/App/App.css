@@ -1,6 +1,6 @@
 .pushpin {
-  background: #000;
-  border: 3px outset #888;
+  background: rgb(224, 191, 3);
+  border: 3px outset rgb(253, 225, 68);
   border-radius: 50px;
   height: 15px;
   margin: 10px;
