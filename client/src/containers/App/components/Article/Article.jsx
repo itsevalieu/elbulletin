@@ -9,12 +9,17 @@ class Article extends Component {
     super(props);
   }
   render() {
-    if(this.props.article === null || this.props.article === undefined) return null;
-
+    if(this.props.articleId === '' || this.props.articleId === undefined) return null;
     return (
       <Switch>
         <div id='article' className='article'>
-        <iframe src="https://drive.google.com/file/d/1ZFkKzecPY0czJEJLaVWgwXo-JkKpumDo/preview" frameborder="0"></iframe>
+          <div id='details' className='article-details'>
+            <h1 id='title'>{this.props.article.title}</h1>
+            <p id='author'>{this.props.article.author}</p>
+            <p id='year'>{this.props.article.year}</p>
+            <p id='summary'>{this.props.article.summary}</p>
+          </div>
+          <iframe src={this.props.article.body} frameBorder="0"></iframe>
           {/* <div id='details' className='article-details'>
             <h1 id='title'>{this.props.article.title}</h1>
             <p id='author'>{this.props.article.author}</p>
