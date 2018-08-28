@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
-  Route
+  BrowserRouter as Router
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
@@ -19,14 +18,27 @@ class App extends Component {
         literature: [],
         technical: []
       },
-      articleId: ''
+      articleId: '',
+      article: {}
     }
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
-    e.preventDefault();
     this.setState({
       articleId: e.target.dataset.article
+    });
+    this.getArticle(this.state.articleId);
+  }
+  getArticle(id) {
+    if(id === '') return null;
+    console.log(id);
+    return axios(`http://elbulletin-db.herokuapp.com/api/articles/${id}`)
+    .then((data) => {
+      return data.data.article;
+    }).then((article) => {
+      this.setState({
+        article: article
+      });
     });
   }
   componentDidMount(){
@@ -61,7 +73,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Bulletin posts={this.state.posts} handleClick={this.handleClick}/>
-          <Article articleId={this.state.articleId}/>
+          <Article article={this.state.article}/>
+            
         </div>
       </Router>
     );
