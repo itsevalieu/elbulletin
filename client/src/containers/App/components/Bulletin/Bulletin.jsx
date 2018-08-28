@@ -9,35 +9,8 @@ import Post from './components/Post/Post';
 class Bulletin extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // posts: {
-      //   creative: this.props.posts.creative,
-      //   research: this.props.posts.research,
-      //   literature: this.props.posts.literature,
-      //   technical: this.props.posts.technical
-      // }  
-    }
-    // this.handleClick = this.handleClick.bind(this);
   }
-  // handleClick(e) {
-  //   e.preventDefault();
-  //   console.log(e.target);
-  // }
-  // componentWillReceiveProps(nextProps) {
-  //   console.log(nextProps);
-  //   console.log(this.state);
-  //   if(nextProps.value !== this.state) {
-  //     this.setState({
-  //       isLoaded: true,
-  //       posts: {
-  //         creative: this.props.posts.creative,
-  //         research: this.props.posts.research,
-  //         literature: this.props.posts.literature,
-  //         technical: this.props.posts.technical
-  //       }
-  //     });
-  //   }
-  // }
+
   render() {
     return (
       <Switch>
@@ -46,7 +19,7 @@ class Bulletin extends Component {
           <div id='posts' className='posts'>
             <section id='posts-creative'>
               <Header name={'Creative Writing'}/>
-              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
+              { this.props.posts.creative.map((post, index) => ( <Post id='post' key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
             <section id='posts-literature'>
               <Header name={'Literature Analysis'}/>
