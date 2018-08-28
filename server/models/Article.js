@@ -23,9 +23,9 @@ const articleSchema = new Schema({
     summary: {
         type: String
     },
-    body: [{
+    body: {
         type: String
-    }]
+    }
 });
 
 // Create a model
