@@ -33,7 +33,7 @@ class App extends Component {
   getArticle(id) {
     if(id === '') return null;
     console.log(id);
-    return axios(`http://elbulletin-db.herokuapp.com/api/articles/${id}`)
+    return axios(`https://elbulletin-db.herokuapp.com/api/articles/${id}`)
     .then((data) => {
       return data.data.article;
     }).then((article) => {
@@ -43,7 +43,7 @@ class App extends Component {
     });
   }
   componentDidMount(){
-    axios(`http://elbulletin-db.herokuapp.com/api/posts/`)
+    axios(`https://elbulletin-db.herokuapp.com/api/posts/`)
 		.then(({data}) => {
       let results = data.data;
       let creativeResults = results.filter(post => post.category === 'creative');
