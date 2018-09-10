@@ -10,7 +10,13 @@ class Bulletin extends Component {
   constructor(props) {
     super(props);
   }
-
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextProps === this.props) {
+      return false;
+    } else {
+      return true;
+    }
+  }
   render() {
     return (
       <Switch>
