@@ -9,8 +9,19 @@ import Post from './components/Post/Post';
 class Bulletin extends Component {
   constructor(props) {
     super(props);
+<<<<<<< HEAD
   }
 
+=======
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextProps === this.props) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+>>>>>>> 74b8d7b9dfdd6f5cdecccd54923e8ed3016748e5
   render() {
     return (
       <Switch>
