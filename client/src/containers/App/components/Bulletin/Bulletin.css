@@ -2,10 +2,43 @@
   align-content: center;
   align-items: center;
   background-image: url("../../../../assets/bulletin.jpg");
-  border: 15px ridge #b47e50;
+  border: 25px ridge #6b380bc9;
   box-shadow: 5px 5px 5px #444;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: flex-start;
-  margin: 25px 25px;
+  margin: 50px 50px;
   min-height: 500px; }
+.tabs {
+  background: linear-gradient(left, #ffff99, #e9e98a, #dbdb82);
+  box-shadow: 1px 1px 1px rgb(146, 145, 145);
+  height: 30px;
+  width: 75px;
+  position: fixed;
+  left: 4px;
+  transform: rotateZ(5deg);
+  font-size: 12px;
+  text-align: center;
+}
+.tab1 {
+  top: 100px;
+}
+.tab2 {
+  top: 150px;
+}
+.tab3 {
+  top: 200px;
+}
+.tab4 {
+  top: 250px;
+}
+@media (max-width: 767px) {
+  .bulletin {
+    flex-flow: column wrap; }
+ }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bulletin {
+    flex-flow: column wrap; 
+  } 
+}

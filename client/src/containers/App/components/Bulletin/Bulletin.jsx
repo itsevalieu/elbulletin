@@ -5,28 +5,35 @@ import {
 import './Bulletin.css';
 import Header from './components/Header/Header';
 import Post from './components/Post/Post';
+import './components/Article/Article.css';
 
 class Bulletin extends Component {
-  constructor(props) {
-    super(props);
-<<<<<<< HEAD
-  }
-
-=======
-  }
   shouldComponentUpdate(nextProps, nextState) {
-    if(nextProps === this.props) {
+    if(nextProps.posts === this.props.posts) {
+      return false;
+    } else {
+      return true;
+    }
+    if(nextProps.articleId === this.props.articleId) {
       return false;
     } else {
       return true;
     }
   }
->>>>>>> 74b8d7b9dfdd6f5cdecccd54923e8ed3016748e5
   render() {
+    console.log('bulletin renders');
+    console.log('article render');
+    // if(this.props.articleId === '' || this.props.articleId === undefined) return null;
     return (
       <Switch>
         <div id='bulletin' className='bulletin'>
-          <Header name={'E.L Bulletin'}/>
+          {/* <Header name={'E.L Bulletin'}/> */}
+          <div>
+            <div className='tabs tab1'>Creative Writing</div>
+            <div className='tabs tab2'>Literature Analysis</div>
+            <div className='tabs tab3'>Research Papers</div>
+            <div className='tabs tab4'>Web Development</div>
+          </div>
           <div id='posts' className='posts'>
             <section id='posts-creative'>
               <Header name={'Creative Writing'}/>
@@ -44,6 +51,15 @@ class Bulletin extends Component {
               <Header name={'Web Development'}/>
               { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
+          </div>
+          <div id='article' className='article'>
+            <div id='details' className='article-details'>
+              <h1 id='title'>{this.props.article.title}</h1>
+              <p id='author'>{this.props.article.author}</p>
+              <p id='year'>{this.props.article.year}</p>
+              <p id='summary'>{this.props.article.summary}</p>
+            </div>
+            <iframe src={this.props.article.body} frameBorder="0"></iframe>
           </div>
         </div>
       </Switch>
