@@ -52,6 +52,7 @@
 
 @media (max-width: 767px) {
   .posts {
+    width: 100%;
     flex-flow: column wrap; }
     .posts section {
       flex-flow: column wrap;
@@ -63,7 +64,9 @@
     min-width: 90%; } }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .posts section {
-    flex: 1 25%; }
-    .posts section .header a {
-      font-size: 1.3em; } }
+  .posts {
+    width: 100%;}
+    .posts section {
+      flex: 1 25%; }
+      .posts section .header a {
+        font-size: 1.3em; } }
