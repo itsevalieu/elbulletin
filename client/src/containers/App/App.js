@@ -6,7 +6,6 @@ import axios from 'axios';
 import './App.css';
 
 import Bulletin from './components/Bulletin/Bulletin';
-import Article from './components/Article/Article';
 
 class App extends Component {
   constructor() {
@@ -73,8 +72,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} handleClick={this.handleClick}/>
-          <Article article={this.state.article} articleId= {this.state.articleId}/>
+          <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/>
         </div>
       </Router>
     );
