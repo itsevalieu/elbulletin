@@ -23,7 +23,6 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
-
     this.setState({
       articleId: e.target.dataset.article
     });
