@@ -59,7 +59,7 @@ class Bulletin extends Component {
               <p id='year'>{this.props.article.year}</p>
               <p id='summary'>{this.props.article.summary}</p>
             </div>
-            <iframe src={this.props.article.body} frameBorder="0"></iframe>
+            <iframe src={this.props.article.body} frameBorder="0" title='article'></iframe>
           </div>
         </div>
       </Switch>

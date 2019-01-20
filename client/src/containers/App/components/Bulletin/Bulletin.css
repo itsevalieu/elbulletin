@@ -10,7 +10,7 @@
   margin: 50px 50px;
   min-height: 500px; }
 .tabs {
-  background: linear-gradient(left, #ffff99, #e9e98a, #dbdb82);
+  background: linear-gradient(to left, #ffff99, #e9e98a, #dbdb82);
   box-shadow: 1px 1px 1px rgb(146, 145, 145);
   height: 30px;
   width: 75px;
