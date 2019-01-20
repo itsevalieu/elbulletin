@@ -1,9 +1,10 @@
 .posts {
   display: flex;
   flex-flow: row wrap;
-  height: 100%;
+  border: 5px solid red;
+  min-height: 100%;
   padding: 10px;
-  width: 100%; }
+  width: 50%; }
   .posts section {
     align-items: center;
     display: flex;
@@ -16,12 +17,7 @@
       transform: rotateZ(-1deg);
       width: 95%; }
       .posts section .header a {
-<<<<<<< HEAD
-        font-size: 1.4em;
-        text-decoration: none; }
-=======
         font-size: 1.4em; }
->>>>>>> 74b8d7b9dfdd6f5cdecccd54923e8ed3016748e5
 
 .post {
   align-items: center;
@@ -32,22 +28,17 @@
   flex-flow: column;
   font-family: 'Times New Roman', serif;
   font-size: 1em;
-  height: 200px;
+  min-height: 150px;
+  max-height: 200px;
   justify-content: flex-start;
-  min-width: 200px;
+  min-width: 150px;
   max-width: 300px;
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
-<<<<<<< HEAD
-  text-decoration: none; }
-  .post a {
-    text-decoration: none; }
-=======
   text-decoration: none;
   text-decoration-line: none;
   transform: rotateZ(0deg); }
->>>>>>> 74b8d7b9dfdd6f5cdecccd54923e8ed3016748e5
 
 .post:hover {
   transform: rotate(-1deg);
@@ -73,6 +64,6 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .posts section {
-    flex: 1 50%; }
+    flex: 1 25%; }
     .posts section .header a {
       font-size: 1.3em; } }
