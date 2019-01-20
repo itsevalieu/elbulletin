@@ -17,8 +17,8 @@
       transform: rotateZ(-1deg);
       width: 95%; }
       .posts section .header a {
-        font-size: 1.4em; }
-
+        font-size: 1.4em; 
+        text-decoration: none; }
 .post {
   align-items: center;
   background-color: #FBFBFB;
