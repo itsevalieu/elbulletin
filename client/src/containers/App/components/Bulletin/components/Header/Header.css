@@ -7,14 +7,16 @@
   justify-content: space-between;
   margin: 10px;
   transform: rotateZ(1deg);
-  width: 70%; }
-  .header a {
-    color: #111;
-    font-family: 'serif';
-    font-size: 1.8em;
-    text-decoration: none;
-    text-align: center; }
-
+}
+.header a {
+  color: #111;
+  font-family: 'serif';
+  font-size: 1.8em;
+  text-decoration: none;
+  text-align: center; 
+}
 @media (max-width: 639px) {
   .header a {
-    font-size: 1.5em; } }
+    font-size: 1.5em; 
+  } 
+}
