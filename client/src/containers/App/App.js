@@ -4,9 +4,8 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-
+import Header from './components/Bulletin/components/Header/Header';
 import Bulletin from './components/Bulletin/Bulletin';
-import Article from './components/Article/Article';
 
 class App extends Component {
   constructor() {
@@ -24,7 +23,6 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
-
     this.setState({
       articleId: e.target.dataset.article
     });
@@ -73,8 +71,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} handleClick={this.handleClick}/>
-          <Article article={this.state.article} articleId= {this.state.articleId}/>
+          <div className='bulletin-header'>
+            <Header name={'E.L Bulletin'}/>
+          </div>
+          <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/>
         </div>
       </Router>
     );

@@ -4,12 +4,18 @@ import {
 } from 'react-router-dom';
 import './Article.css';
 
+// Article will rerender onClick
 class Article extends Component {
-  constructor(props) {
-    super(props);
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextProps.articleId === this.props.articleId) {
+      return false;
+    } else {
+      return true;
+    }
   }
   render() {
     if(this.props.articleId === '' || this.props.articleId === undefined) return null;
+    console.log('article render');
     return (
       <Switch>
         <div id='article' className='article'>
@@ -20,15 +26,6 @@ class Article extends Component {
             <p id='summary'>{this.props.article.summary}</p>
           </div>
           <iframe src={this.props.article.body} frameBorder="0"></iframe>
-          {/* <div id='details' className='article-details'>
-            <h1 id='title'>{this.props.article.title}</h1>
-            <p id='author'>{this.props.article.author}</p>
-            <p id='year'>{this.props.article.year}</p>
-            <p id='summary'>{this.props.article.summary}</p>
-          </div>
-          <div id='body' className='article-body'> 
-            <p>{this.props.article.body}</p> 
-          </div> */}
         </div>
       </Switch>
     );

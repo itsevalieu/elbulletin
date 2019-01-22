@@ -2,7 +2,27 @@
   background: rgb(224, 191, 3);
   border: 3px outset rgb(253, 225, 68);
   border-radius: 50px;
-  height: 15px;
-  margin: 10px;
-  width: 15px;
+  min-height: 10px;
+  margin: 5px;
+  width: 10px;
+  z-index: 5000;
+}
+.App {
+  padding: 50px;
+}
+.bulletin-header {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 300px;
+  margin: 0 -150px;
+}
+@media (max-width: 767px) {
+  .App {
+    padding: 10px;
+  }
+  .bulletin-header {
+    top: -5px;
+    left: 50%;
+  }
 }

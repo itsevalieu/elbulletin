@@ -12,6 +12,13 @@ class Post extends Component {
         }
         this.toggleHover = this.toggleHover.bind(this);
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        if(nextProps.post === this.props.post) {
+          return false;
+        } else {
+          return true;
+        }
+    }
     toggleHover() {
         this.setState({hover: !this.state.hover });
     }
@@ -22,9 +29,9 @@ class Post extends Component {
             3: '#ccff00',
             4: '#00b9fb',
             5: '#cda4de',
-            6: '#fbfbfb',
+            6: '#ffcc00'
         };
-        let bkgdColor = color[Math.floor(Math.random()* 6)];
+        let bkgdColor = color[Math.floor(Math.random()* 7)];
         let pinColor = {
             backgroundColor: bkgdColor
         };
@@ -34,7 +41,7 @@ class Post extends Component {
             backgroundColor: bkgdColor,
             transform: `rotateZ(${randomDeg})`
         }
-        
+        console.log('posts render');
         return (
             <Link to={`${this.props.post.article}`}>
                 <div className='post' onClick={this.props.handleClick} data-article={this.props.post.article} style={postStyle}>
