@@ -1,24 +1,31 @@
 .bulletin {
-  align-content: center;
-  align-items: center;
   background-image: url("../../../../assets/bulletin.jpg");
-  border: 25px ridge #6b380bc9;
+  border: 50px ridge #6b380bc9;
   box-shadow: 5px 5px 5px #444;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  margin: 50px 50px;
-  min-height: 500px; }
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: "posts articles";
+}
 .tabs {
   background: linear-gradient(to left, #ffff99, #e9e98a, #dbdb82);
   box-shadow: 1px 1px 1px rgb(146, 145, 145);
   height: 30px;
   width: 75px;
-  position: fixed;
+  position: absolute;
   left: 4px;
   transform: rotateZ(5deg);
   font-size: 12px;
   text-align: center;
+  z-index: 5000;
+}
+.tabs:hover {
+  transform: rotate(1deg);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.494);
+  border-radius: 1px; 
+}
+.tabs:target {
+  background: pink;
 }
 .tab1 {
   top: 100px;
@@ -32,13 +39,54 @@
 .tab4 {
   top: 250px;
 }
+.social-media {
+  position: relative;
+  bottom: 80px;
+  right: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+}
+.sm img {
+  height: 35px;
+  width: 35px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bulletin {
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "posts" "articles";
+  } 
+}
 @media (max-width: 767px) {
   .bulletin {
-    flex-flow: column wrap; }
- }
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .bulletin {
-    flex-flow: column wrap; 
-  } 
+    border: 30px ridge #6b380bc9;
+    grid-template-columns: auto;
+    grid-template-rows: 50% auto;
+    grid-template-areas: "posts" "articles";
+  }
+  .tabs {
+    height: 30px;
+    width: 75px;
+    position: absolute;
+    left: -5px;
+    transform: rotateZ(5deg);
+    font-size: 12px;
+    text-align: center;
+    z-index: 5000;
+  }
+  .tab1 {
+    top: 75px;
+  }
+  .tab2 {
+    top: 125px;
+  }
+  .tab3 {
+    top: 175px;
+  }
+  .tab4 {
+    top: 225px;
+  }
 }
