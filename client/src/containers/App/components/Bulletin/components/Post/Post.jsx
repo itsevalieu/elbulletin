@@ -29,9 +29,9 @@ class Post extends Component {
             3: '#ccff00',
             4: '#00b9fb',
             5: '#cda4de',
-            6: '#fbfbfb',
+            6: '#ffcc00'
         };
-        let bkgdColor = color[Math.floor(Math.random()* 6)];
+        let bkgdColor = color[Math.floor(Math.random()* 7)];
         let pinColor = {
             backgroundColor: bkgdColor
         };
@@ -43,7 +43,6 @@ class Post extends Component {
         }
         console.log('posts render');
         return (
-            
             <Link to={`${this.props.post.article}`}>
                 <div className='post' onClick={this.props.handleClick} data-article={this.props.post.article} style={postStyle}>
                     <div className='pushpin' style={pinColor}></div>
