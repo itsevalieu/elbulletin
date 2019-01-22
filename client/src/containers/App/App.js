@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-
+import Header from './components/Bulletin/components/Header/Header';
 import Bulletin from './components/Bulletin/Bulletin';
 
 class App extends Component {
@@ -71,6 +71,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <div className='bulletin-header'>
+            <Header name={'E.L Bulletin'}/>
+          </div>
           <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/>
         </div>
       </Router>
