@@ -40,14 +40,15 @@
   top: 250px;
 }
 .social-media {
-  position: relative;
-  bottom: 80px;
-  right: 100px;
+  position: absolute;
+  bottom: -60px;
+  left: 100px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   width: 350px;
+  z-index: 20;
 }
 .sm img {
   height: 35px;

@@ -28,13 +28,14 @@ class Bulletin extends Component {
     console.log('bulletin renders');
     console.log('article render');
     // if(this.props.articleId === '' || this.props.articleId === undefined) return null;
-    document.getElementsByClassName('tabs', function(e){
-      document
-      e.preventDefault();
-    });
+    const height = document.documentElement.clientHeight;
+    const width = document.documentElement.clientWidth;
+    const bulletinHeight = {
+      gridTemplateRows: height
+    }
     return (
       <Switch>
-        <div id='bulletin' className='bulletin'>
+        <div id='bulletin' className='bulletin' style={bulletinHeight}>
           <Router>
             <div>
               <div className='tabs tab1'><a href='/creative_writing'>Creative Writing</a></div>
@@ -76,12 +77,6 @@ class Bulletin extends Component {
               <iframe src={this.props.article.body} frameBorder="0" title='article'></iframe>
             </div>
             <div className='pseudo-paper'></div>
-          </div>
-          <div className='social-media'>
-              <div><Header className='social-media-header' name={'Follow me:'}/></div>
-              <div className='sm'><a href='/' target='_blank'><img src={github} alt='github'/></a></div>
-              <div className='sm'><a href='/' target='_blank'><img src={linkedin} alt='linkedin'/></a></div>
-              <div className='sm'><a href='/' target='_blank'><img src={twitter} alt='twitter'/></a></div>
           </div>
         </div>
       </Switch>
