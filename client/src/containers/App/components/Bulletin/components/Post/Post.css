@@ -54,7 +54,7 @@
   z-index: 1000;
 }
 .post p {
-  margin: 0px 0pxs 5px 0px;
+  margin: 0px 0px 5px 0px;
 }
 .post:hover {
   transform: rotate(-1deg);
