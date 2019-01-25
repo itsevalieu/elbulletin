@@ -62,6 +62,7 @@ class Bulletin extends Component {
               { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
             </section>
           </div>
+          {/* Rename Article as Paper component */}
           <div id='article' className='article'>
             <div className='paper'>
               <div className='pushpin paper-pushpin1'></div>
