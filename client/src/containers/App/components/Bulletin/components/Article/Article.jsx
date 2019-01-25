@@ -4,8 +4,8 @@ import {
 } from 'react-router-dom';
 import './Article.css';
 
-// Article will rerender onClick
-class Article extends Component {
+// Paper will rerender onClick
+class Paper extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     if(nextProps.articleId === this.props.articleId) {
       return false;
@@ -32,4 +32,4 @@ class Article extends Component {
   }
 }
 
-export default Article;
+export default Paper;
