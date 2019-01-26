@@ -1,4 +1,4 @@
-/* Article Div */
+/* Paper Div */
 div.article {
     display: flex;
     border-left: 12.5px groove #6b380bc9;
@@ -11,15 +11,15 @@ div.article {
     padding: 25px;
 }
 
-/* Article Details */
-.article-details {
+/* Paper Details */
+.paper-details {
     padding-bottom: 50px;
 }
-.article-details p {
+.paper-details p {
     font-size: 16px;
 }
-/* Article Body */
-.article-body p {
+/* Paper Body */
+.paper-body p {
     font-size: 16px;
     line-height: 26px;
     text-align: left;

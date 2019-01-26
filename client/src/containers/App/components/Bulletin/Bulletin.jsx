@@ -63,13 +63,13 @@ class Bulletin extends Component {
             </section>
           </div>
           {/* Rename Article as Paper component */}
-          <div id='article' className='article'>
+          <div id='paper' className='article'>
             <div className='paper'>
               <div className='pushpin paper-pushpin1'></div>
               <div className='pushpin paper-pushpin2'></div>
               <div className='pushpin paper-pushpin3'></div>
               <div className='pushpin paper-pushpin4'></div>
-              <div id='details' className='article-details'>
+              <div id='details' className='paper-details'>
                 <h2 id='title' className='paper-title'>{this.props.article.title}Title</h2>
                 <p id='author' className='paper-author'>{this.props.article.author}Author</p>
                 <p id='year' className='paper-year'>{this.props.article.year}Year</p>
