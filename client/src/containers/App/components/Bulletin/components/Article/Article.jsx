@@ -18,8 +18,8 @@ class Paper extends Component {
     console.log('article render');
     return (
       <Switch>
-        <div id='article' className='article'>
-          <div id='details' className='article-details'>
+        <div id='paper' className='paper'>
+          <div id='details' className='paper-details'>
             <h1 id='title'>{this.props.article.title}</h1>
             <p id='author'>{this.props.article.author}</p>
             <p id='year'>{this.props.article.year}</p>
