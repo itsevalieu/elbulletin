@@ -37,6 +37,7 @@ class Bulletin extends Component {
       <Switch>
         <div id='bulletin' className='bulletin' style={bulletinHeight}>
           <Router>
+            {/* Clicking tabs should allow filtered posts to pop up first*/}
             <div>
               <div className='tabs tab1'><a href='/creative_writing'>Creative Writing</a></div>
               <div className='tabs tab2'><a href='/literature_analysis'>Literature Analysis</a></div>
@@ -86,3 +87,7 @@ class Bulletin extends Component {
 }
 
 export default Bulletin;
+// Page loads = get all posts from database
+// Click tab = filter specific posts and z-index first, making others grey out and behind the filtered posts
+// Web dev tabs should show frontend/ backend tabs under it
+// Click on postit = get project and show on paper
