@@ -7,6 +7,7 @@ import './Bulletin.css';
 import Header from './components/Header/Header';
 import Post from './components/Post/Post';
 import './components/Article/Article.css';
+import Tab from './components/Tab/Tab';
 import twitter from '../../../../assets/twitter.png';
 import github from '../../../../assets/github.png';
 import linkedin from '../../../../assets/linkedin.png';
@@ -39,6 +40,7 @@ class Bulletin extends Component {
           <Router>
             {/* Clicking tabs should allow filtered posts to pop up first*/}
             <div>
+              <Tab/>
               <div className='tabs tab1'><a href='/creative_writing'>Creative Writing</a></div>
               <div className='tabs tab2'><a href='/literature_analysis'>Literature Analysis</a></div>
               <div className='tabs tab3'><a href='/research_papers'>Research Papers</a></div>
