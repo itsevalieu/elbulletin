@@ -5,12 +5,9 @@ import {
 import './Tab.css';
 
 class Tab extends Component {
-    constructor() {
-        super();
-    }
     render() {
         return (
-            <Link to='/cats' className='tab'>Cat</Link>
+            <Link to={this.props.tab.href} className={`${'tab '+ this.props.tab.class}`}>{this.props.tab.name}</Link>
         );
     }
 }

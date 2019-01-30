@@ -13,6 +13,33 @@ import github from '../../../../assets/github.png';
 import linkedin from '../../../../assets/linkedin.png';
 
 class Bulletin extends Component {
+  constructor() {
+    super();
+    this.state = {
+      tabs: [
+        {
+          name: 'Creative Writing',
+          href: '/creative_writing',
+          class: 'tab1'
+        },
+        {
+          name: 'Literature Analysis',
+          href: '/literature_analysis',
+          class: 'tab2'
+        },
+        {
+          name: 'Research Papers',
+          href: '/research_papers',
+          class: 'tab3'
+        },
+        {
+          name: 'Web Development',
+          href: '/web_development',
+          class: 'tab4'
+        }
+      ]
+    }
+  }
   shouldComponentUpdate(nextProps, nextState) {
     if(nextProps.posts === this.props.posts) {
       return false;
@@ -40,11 +67,11 @@ class Bulletin extends Component {
           <Router>
             {/* Clicking tabs should allow filtered posts to pop up first*/}
             <div>
-              <Tab/>
-              <div className='tabs tab1'><a href='/creative_writing'>Creative Writing</a></div>
+              { this.state.tabs.map((tab, index) =>(<Tab tab={tab} />))}
+              {/* <div className='tabs tab1'><a href='/creative_writing'>Creative Writing</a></div>
               <div className='tabs tab2'><a href='/literature_analysis'>Literature Analysis</a></div>
               <div className='tabs tab3'><a href='/research_papers'>Research Papers</a></div>
-              <div className='tabs tab4'><a href='/web_development'>Web Development</a></div>
+              <div className='tabs tab4'><a href='/web_development'>Web Development</a></div> */}
             </div>
           </Router>
           <div id='posts' className='posts'>
