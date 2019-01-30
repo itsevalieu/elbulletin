@@ -27,3 +27,27 @@
   .tab4 {
     top: 250px;
   }
+  @media (max-width: 767px) {
+    .tabs {
+      height: 30px;
+      width: 75px;
+      position: absolute;
+      left: -5px;
+      transform: rotateZ(5deg);
+      font-size: 12px;
+      text-align: center;
+      z-index: 5000;
+    }
+    .tab1 {
+      top: 75px;
+    }
+    .tab2 {
+      top: 125px;
+    }
+    .tab3 {
+      top: 175px;
+    }
+    .tab4 {
+      top: 225px;
+    }
+  }

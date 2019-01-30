@@ -27,18 +27,6 @@
 .tabs:target {
   background: pink;
 }
-.tab1 {
-  top: 100px;
-}
-.tab2 {
-  top: 150px;
-}
-.tab3 {
-  top: 200px;
-}
-.tab4 {
-  top: 250px;
-}
 .social-media {
   position: absolute;
   bottom: -60px;
