@@ -1,12 +1,12 @@
 .tab {
-    background: linear-gradient(to left, #ffff99, #e9e98a, #dbdb82);
+    background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82);
     box-shadow: 1px 1px 1px rgb(146, 145, 145);
     height: 30px;
     width: 75px;
     position: absolute;
     left: 4px;
     transform: rotateZ(5deg);
-    font-size: 12px;
+    font-size: 1.2em;
     text-align: center;
     z-index: 5000;
 }
@@ -34,7 +34,7 @@
       position: absolute;
       left: -5px;
       transform: rotateZ(5deg);
-      font-size: 12px;
+      font-size: 1.1em;
       text-align: center;
       z-index: 5000;
     }
