@@ -53,7 +53,6 @@
 .bulletin__footer {
   grid-area: footer;
   background: #72543a;
- 
   position: relative;
   z-index: 1;
 }
@@ -93,8 +92,5 @@
   .bulletin__chalkboard {
     border-left: none;
     padding: 25px;
-  }
-  .bulletin__footer {
-    border-bottom: 90px solid #6b380bf1;
   }
 }

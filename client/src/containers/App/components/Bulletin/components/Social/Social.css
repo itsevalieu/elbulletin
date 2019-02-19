@@ -21,3 +21,17 @@
     bottom: 45px;
     transform: rotate(3deg);
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+    .social__icon {
+        height: 60px;
+        width: 60px;
+    }
+    .social__link:hover {
+        bottom: 25px;
+    }
+}
+@media (max-width: 767px) {
+    .social {
+      border-bottom: 90px solid #6b380bf1;
+    }
+}
