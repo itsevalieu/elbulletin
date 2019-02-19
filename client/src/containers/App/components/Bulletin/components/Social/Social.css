@@ -1,15 +1,13 @@
-.social-media {
-    position: absolute;
-    bottom: -60px;
-    left: 100px;
+.social {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 350px;
-    z-index: 20;
+    height: 100%;
 }
-.sm img {
+.social__icon {
     height: 35px;
     width: 35px;
+    box-shadow: 1px 3px 1px #333;
+    background: #333;
 }

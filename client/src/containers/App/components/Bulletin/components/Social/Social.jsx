@@ -3,25 +3,18 @@ import {
     Link
   } from 'react-router-dom';
 import './Social.css';
-import Header from '../Header/Header';
 import twitter from './twitter.png';
 import github from './github.png';
 import linkedin from './linkedin.png';
 
-function Social(){
+function Social() {
     return (
-        <div className='social-media'>
-            <div><Header className='social-media-header' name={'Follow me:'}/></div>
-            <div className='sm'><a href='/' target='_blank'><img src={github} alt='github'/></a></div>
-            <div className='sm'><a href='/' target='_blank'><img src={linkedin} alt='linkedin'/></a></div>
-            <div className='sm'><a href='/' target='_blank'><img src={twitter} alt='twitter'/></a></div>
+        <div className='social'>
+            <Link to='https://github.com/itsevalieu' target='_blank'><img className='social__icon' src={github} alt='github'/></Link>
+            <Link to='https://www.linkedin.com/in/eva-lieu/' target='_blank'><img className='social__icon' src={linkedin} alt='linkedin'/></Link>
+            <Link to='https://twitter.com/itsevalieu' target='_blank'><img className='social__icon' src={twitter} alt='twitter'/></Link>
         </div>
     );
 }
 
 export default Social;
-/* Needs:
-1. a => Link
-2. links for social media
-3. Restyle for tab on side om click
-*/
