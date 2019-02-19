@@ -69,11 +69,11 @@ class Bulletin extends Component {
           <div className='bulletin__footer'>
             <Social/>
           </div>
-          {/* <Router>
-            <div>
+          <Router>
+            <div className='bulletin__tab'>
               { this.state.tabs.map((tab, index) =>(<Tab tab={tab} />))}
             </div>
-          </Router> */}
+          </Router>
         </div>
       </Switch>
     );
