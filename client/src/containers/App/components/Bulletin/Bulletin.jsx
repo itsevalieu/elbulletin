@@ -4,13 +4,10 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom';
 import './Bulletin.css';
-import Header from './components/Header/Header';
 import Post from './components/Post/Post';
 import './components/Article/Article.css';
 import Tab from './components/Tab/Tab';
-import twitter from '../../../../assets/twitter.png';
-import github from '../../../../assets/github.png';
-import linkedin from '../../../../assets/linkedin.png';
+import Social from './components/Social/Social';
 
 class Bulletin extends Component {
   constructor() {
@@ -55,7 +52,6 @@ class Bulletin extends Component {
   render() {
     console.log('bulletin renders');
     console.log('article render');
-    // if(this.props.articleId === '' || this.props.articleId === undefined) return null;
     const height = document.documentElement.clientHeight;
     const width = document.documentElement.clientWidth;
     const bulletinHeight = {

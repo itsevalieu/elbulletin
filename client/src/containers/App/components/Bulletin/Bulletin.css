@@ -7,21 +7,7 @@
   grid-template-rows: auto;
   grid-template-areas: "posts articles";
 }
-.social-media {
-  position: absolute;
-  bottom: -60px;
-  left: 100px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 350px;
-  z-index: 20;
-}
-.sm img {
-  height: 35px;
-  width: 35px;
-}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .bulletin {
     grid-template-columns: auto;
