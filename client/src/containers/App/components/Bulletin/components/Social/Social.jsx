@@ -20,3 +20,8 @@ function Social(){
 }
 
 export default Social;
+/* Needs:
+1. a => Link
+2. links for social media
+3. Restyle for tab on side om click
+*/
