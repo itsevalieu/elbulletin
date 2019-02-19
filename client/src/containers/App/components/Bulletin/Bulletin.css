@@ -3,9 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
 
 .bulletin {
-  border: 30px groove #6b380bf1;
-  border-bottom: 30px ridge #351b05f1;
-  border-right: 30px ridge #6b380bf1;
+  border: 30px solid #6b380bf1;
+  border-image: url("../../../../assets/border.jpg") 30 stretch;
   box-shadow: 5px 5px 5px #444;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -18,9 +17,10 @@
 .bulletin__corkboard {
   grid-area: corkboard;
   background-image: url("../../../../assets/bulletin.jpg");
-  box-shadow: inset 0px 0px 15px 2px rgba(0,0,0,0.6);
+  box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.6);
   background-size: 100% 100%;
   border-right: 15px inset #714015;
+  border-image: url("../../../../assets/border.jpg") 30 stretch;
 }
 .bulletin__header {
   grid-area: header;
@@ -35,7 +35,7 @@
   font-size: 3.6em;
 }
 .bulletin__chalkboard {
-    background-image: url("../../../../assets/chalk.jpg");
+    background-image: url("../../../../assets/chalk-green.jpg");
     background-size: 100% 100%;
     display: flex;
     flex-flow: column;
@@ -45,15 +45,17 @@
     padding: 2em;
     font-family: 'Special Elite', 'serif';
     color: rgb(226, 226, 226);
-    box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.6);
+    box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.6);
     line-height: 1.6em;
+    border-bottom: 15px inset #714015;
+    border-image: url("../../../../assets/border.jpg") 30 stretch;
 }
 .bulletin__footer {
   grid-area: footer;
-  background: #8b582c;
-  border-top: 15px inset #714015;
-  border-left: 15px outset #351b05f1;
-  box-shadow: 15px 15px 1px #351b05f1;
+  background: #72543a;
+ 
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .bulletin {
@@ -63,10 +65,14 @@
       "corkboard chalkboard"
       "corkboard footer";
   } 
+  .bulletin__corkboard {
+    background-size: 200% 100%;
+    background-position: center center;
+  }
   .bulletin__chalkboard {
     width: 100%;
     padding: 10px;
-}
+  }
 }
 @media (max-width: 767px) {
   .bulletin {
@@ -79,11 +85,16 @@
   }
   .bulletin__corkboard {
     border-right: none;
-    border-bottom: 15px inset #714015;
+    border-bottom: 15px solid #714015;
     width: 100%;
+    background-size: 200% 100%;
+    background-position: center center;
   }
   .bulletin__chalkboard {
     border-left: none;
     padding: 25px;
+  }
+  .bulletin__footer {
+    border-bottom: 90px solid #6b380bf1;
   }
 }
