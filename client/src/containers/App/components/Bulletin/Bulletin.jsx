@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Link,
-  Switch,
+  // Switch,
   BrowserRouter as Router
 } from 'react-router-dom';
 import './Bulletin.css';
@@ -44,15 +44,15 @@ class Bulletin extends Component {
     } else {
       return true;
     }
-    if(nextProps.articleId === this.props.articleId) {
-      return false;
-    } else {
-      return true;
-    }
+    // if(nextProps.articleId === this.props.articleId) {
+    //   return false;
+    // } else {
+    //   return true;
+    // }
   }
   render() {
     return (
-      <Switch>
+      // <Switch>
         <div className='bulletin'>
           <div className='bulletin__corkboard'>
             <div className='bulletin__header'>
@@ -71,11 +71,11 @@ class Bulletin extends Component {
           </div>
           <Router>
             <div className='bulletin__tab'>
-              { this.state.tabs.map((tab, index) =>(<Tab tab={tab} />))}
+              { this.state.tabs.map((tab, index) =>(<Tab key={index} tab={tab} />))}
             </div>
           </Router>
         </div>
-      </Switch>
+      // </Switch>
     );
   }
 }
