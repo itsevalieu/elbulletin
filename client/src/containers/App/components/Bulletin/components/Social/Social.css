@@ -4,10 +4,20 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
+    border-bottom: 60px solid #6b380bf1;
+    border-image: url("../../../../../../assets/border.jpg") 30 stretch;
+    box-shadow: 5px 10px 15px 0px rgba(0,0,0,0.6);
 }
 .social__icon {
-    height: 35px;
-    width: 35px;
-    box-shadow: 1px 3px 1px #333;
-    background: #333;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    z-index: -1;
+}
+.social__link {
+    position: relative;
+}
+.social__link:hover {
+    bottom: 45px;
+    transform: rotate(3deg);
 }
