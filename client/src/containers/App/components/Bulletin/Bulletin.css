@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel:bold');
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Stardos+Stencil:bold');
 
 .bulletin {
   border: 30px solid #6b380bf1;
@@ -30,9 +31,9 @@
 }
 .bulletin__header--logo {
   color: #3d2714c9;
-  text-shadow: inset 0px 1px 0px rgba(22, 12, 12, 0.5);
-  font-family: 'Cinzel', 'serif';
+  font-family: 'Stardos Stencil', 'serif';
   font-size: 3.6em;
+  text-shadow: inset 1px 1px 1px #555;
 }
 .bulletin__tab {
   position: absolute;
