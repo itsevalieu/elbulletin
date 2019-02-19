@@ -7,26 +7,6 @@
   grid-template-rows: auto;
   grid-template-areas: "posts articles";
 }
-.tabs {
-  background: linear-gradient(to left, #ffff99, #e9e98a, #dbdb82);
-  box-shadow: 1px 1px 1px rgb(146, 145, 145);
-  height: 30px;
-  width: 75px;
-  position: absolute;
-  left: 4px;
-  transform: rotateZ(5deg);
-  font-size: 12px;
-  text-align: center;
-  z-index: 5000;
-}
-.tabs:hover {
-  transform: rotate(1deg);
-  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.494);
-  border-radius: 1px; 
-}
-.tabs:target {
-  background: pink;
-}
 .social-media {
   position: absolute;
   bottom: -60px;
