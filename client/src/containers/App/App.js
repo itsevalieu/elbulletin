@@ -4,11 +4,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import Header from './components/Bulletin/components/Header/Header';
 import Bulletin from './components/Bulletin/Bulletin';
-import twitter from '../../assets/twitter.png';
-import github from '../../assets/github.png';
-import linkedin from '../../assets/linkedin.png';
 
 class App extends Component {
   constructor() {
@@ -74,15 +70,6 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className='bulletin-header'>
-            <Header name={'E.L Bulletin'}/>
-          </div>
-          <div className='social-media'>
-              <div><Header className='social-media-header' name={'Follow me:'}/></div>
-              <div className='sm'><a href='/' target='_blank'><img src={github} alt='github'/></a></div>
-              <div className='sm'><a href='/' target='_blank'><img src={linkedin} alt='linkedin'/></a></div>
-              <div className='sm'><a href='/' target='_blank'><img src={twitter} alt='twitter'/></a></div>
-          </div>
           <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/>
         </div>
       </Router>

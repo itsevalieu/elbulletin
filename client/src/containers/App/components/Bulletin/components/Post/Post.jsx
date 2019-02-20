@@ -31,7 +31,7 @@ class Post extends Component {
             5: '#cda4de',
             6: '#ffcc00'
         };
-        let bkgdColor = color[Math.floor(Math.random()* 7)];
+        let bkgdColor = color[Math.floor(Math.random()*7)];
         let pinColor = {
             backgroundColor: bkgdColor
         };
