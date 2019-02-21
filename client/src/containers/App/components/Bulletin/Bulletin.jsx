@@ -11,9 +11,11 @@ import Social from './components/Social/Social';
 import Tab from './components/Tab/Tab';
 
 class Bulletin extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      articleId: '',
+      article: {},
       tabs: [
         {
           name: 'Creative Writing',
@@ -37,18 +39,29 @@ class Bulletin extends Component {
         }
       ]
     }
+    this.handleClick = this.handleClick.bind(this);
   }
-  shouldComponentUpdate(nextProps, nextState) {
+  handleClick(e) {
+    this.setState({
+      articleId: e.target.dataset.article
+    }, () => {
+      this._getArticle(this.state.articleId);
+    });
+  }
+  _getArticle(id) {
+    if(id === '') return null;
+    let article = this.props.articles.filter( article => article._id === id);
+    this.setState({
+      article: article[0]
+    });
+    if(this.state.article === '') return null;
+  }
+  componentDidUpdate(nextProps, nextState) {
     if(nextProps.posts === this.props.posts) {
       return false;
     } else {
       return true;
     }
-    // if(nextProps.articleId === this.props.articleId) {
-    //   return false;
-    // } else {
-    //   return true;
-    // }
   }
   render() {
     return (
@@ -59,13 +72,13 @@ class Bulletin extends Component {
               <Link to='/' className='bulletin__header--logo'>E.L Bulletin</Link>
             </div>
             <div className='bulletin__posts'>
-              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
-              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
-              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
-              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} index={index} handleClick={this.props.handleClick}/> )) }
+              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
             </div>
           </div>
-          <Project />
+          <Project article={this.state.article} />
           <div className='bulletin__footer'>
             <Social/>
           </div>
