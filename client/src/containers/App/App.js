@@ -10,36 +10,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      isLoading: true,
       posts: {
         creative: [],
         research: [],
         literature: [],
         technical: []
       },
-      articleId: '',
-      article: {}
+      articles: {}
     }
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick(e) {
-    this.setState({
-      articleId: e.target.dataset.article
-    });
-    this.getArticle(this.state.articleId);
-  }
-  getArticle(id) {
-    if(id === '') return null;
-    console.log(id);
-    return axios(`https://elbulletin-db.herokuapp.com/api/articles/${id}`)
-    .then((data) => {
-      return data.data.article;
-    }).then((article) => {
-      this.setState({
-        article: article
-      });
-    });
   }
   componentDidMount(){
+    this._getPosts();
+    this._getArticles();
+  }
+  _getPosts () {
     axios(`https://elbulletin-db.herokuapp.com/api/posts/`)
 		.then(({data}) => {
       let results = data.data;
@@ -50,7 +35,7 @@ class App extends Component {
       let researchResults = results.filter(post => post.category === 'research');
 
       this.setState({
-        isLoaded: true,
+        isLoading: false,
         posts: {
           creative: creativeResults,
           research: researchResults,
@@ -58,6 +43,23 @@ class App extends Component {
           technical: technicalResults,
           project: projectResults
         }
+      });
+    }, (err) =>{
+      this.setState({
+        loading: false,
+        err
+      });
+    });
+  }
+  _getArticles() {
+    axios(`https://elbulletin-db.herokuapp.com/api/articles/`)
+		.then(({data}) => {
+      let articles = data.data;
+      console.log('articles', articles);
+      
+      this.setState({
+        isLoaded: true,
+        articles: articles
       });
     }, (err) =>{
       this.setState({
@@ -70,7 +72,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/>
+          <Bulletin posts={this.state.posts} articles={this.state.articles} />
         </div>
       </Router>
     );
