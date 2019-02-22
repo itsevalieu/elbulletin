@@ -18,24 +18,34 @@ class Bulletin extends Component {
       article: {},
       tabs: [
         {
+          name: 'About',
+          href: '/about',
+          class: 'tab1'
+        },
+        {
+          name: 'Portfolio',
+          href: '/portfolio',
+          class: 'tab2'
+        },
+        {
           name: 'Creative Writing',
           href: '/creative_writing',
-          class: 'tab1'
+          class: 'tab3'
         },
         {
           name: 'Literature Analysis',
           href: '/literature_analysis',
-          class: 'tab2'
+          class: 'tab4'
         },
         {
           name: 'Research Papers',
           href: '/research_papers',
-          class: 'tab3'
+          class: 'tab5'
         },
         {
           name: 'Web Development',
           href: '/web_development',
-          class: 'tab4'
+          class: 'tab6'
         }
       ]
     }
