@@ -10,55 +10,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: {
-        creative: [],
-        research: [],
-        literature: [],
-        technical: []
-      },
-      articleId: '',
-      article: {}
+      posts: {}
     }
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick(e) {
-    this.setState({
-      articleId: e.target.dataset.article
-    });
-    this.getArticle(this.state.articleId);
-  }
-  getArticle(id) {
-    if(id === '') return null;
-    console.log(id);
-    return axios(`https://elbulletin-db.herokuapp.com/api/articles/${id}`)
-    .then((data) => {
-      return data.data.article;
-    }).then((article) => {
-      this.setState({
-        article: article
-      });
-    });
   }
   componentDidMount(){
+    this._loadPosts();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.posts === null) {
+      this._loadPosts();
+    }
+  }
+  _loadPosts() {
     axios(`https://elbulletin-db.herokuapp.com/api/posts/`)
 		.then(({data}) => {
-      let results = data.data;
-      let creativeResults = results.filter(post => post.category === 'creative');
-      let technicalResults = results.filter(post => post.category === 'technical');
-      let literatureResults = results.filter(post => post.category === 'literature');
-      let projectResults = results.filter(post => post.category === 'project');
-      let researchResults = results.filter(post => post.category === 'research');
-
+      console.log('posts', data);
       this.setState({
         isLoaded: true,
-        posts: {
-          creative: creativeResults,
-          research: researchResults,
-          literature: literatureResults,
-          technical: technicalResults,
-          project: projectResults
-        }
+        posts: data.data
       });
+      console.log(this.state.posts);
     }, (err) =>{
       this.setState({
         isLoaded: true,
@@ -70,7 +41,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/>
+          <Bulletin posts={this.state.posts}/>
+          {/* <Bulletin posts={this.state.posts} handleClick={this.handleClick} article={this.state.article} articleId= {this.state.articleId}/> */}
         </div>
       </Router>
     );
