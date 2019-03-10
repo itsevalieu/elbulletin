@@ -1,3 +1,29 @@
+.project__title, .project__year, .project__body {
+    white-space: wrap;
+}
+.project__link {
+    border-radius: 50%;
+}
+.project__icon {
+    height: 50px;
+    width: 50px;
+    background: grey;
+    background-image: linear-gradient(#fff, #ccc);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 3px 2px 1px #222;
+    position: relative;
+    top: 150px;
+    left: 250px;
+    transform: rotate(5deg);
+}
+.project__icon--github {
+    top: 120px;
+    left: 200px;
+    padding: 0px;
+    background-image: none;
+    background: none;
+}
 @media (max-width: 767px) {
     
 }

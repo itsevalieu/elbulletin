@@ -14,42 +14,65 @@ class Bulletin extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      articleId: '',
+      article: {},
       tabs: [
+        {
+          name: 'About',
+          href: '/about',
+          class: 'tab1'
+        },
+        {
+          name: 'Portfolio',
+          href: '/portfolio',
+          class: 'tab2'
+        },
         {
           name: 'Creative Writing',
           href: '/creative_writing',
-          class: 'tab1'
+          class: 'tab3'
         },
         {
           name: 'Literature Analysis',
           href: '/literature_analysis',
-          class: 'tab2'
+          class: 'tab4'
         },
         {
           name: 'Research Papers',
           href: '/research_papers',
-          class: 'tab3'
+          class: 'tab5'
         },
         {
           name: 'Web Development',
           href: '/web_development',
-          class: 'tab4'
+          class: 'tab6'
         }
       ]
     }
+    this.handleClick = this.handleClick.bind(this);
   }
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if(nextProps.posts === this.props.posts) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-    // if(nextProps.articleId === this.props.articleId) {
-    //   return false;
-    // } else {
-    //   return true;
-    // }
-  // }
+  handleClick(e) {
+    this.setState({
+      articleId: e.target.dataset.article
+    }, () => {
+      this._getArticle(this.state.articleId);
+    });
+  }
+  _getArticle(id) {
+    if(id === '') return null;
+    let article = this.props.articles.filter( article => article._id === id);
+    this.setState({
+      article: article[0]
+    });
+    if(this.state.article === '') return null;
+  }
+  componentDidUpdate(nextProps, nextState) {
+    if(nextProps.posts === this.props.posts) {
+      return false;
+    } else {
+      return true;
+    }
+  }
   render() {
     return (
       // <Switch>
@@ -59,14 +82,13 @@ class Bulletin extends Component {
               <Link to='/' className='bulletin__header--logo'>E.L Bulletin</Link>
             </div>
             <div className='bulletin__posts'>
-              {/* { this.props.posts.map((post, index) => ( <Post key={index} post={post} /> )) } */}
-              {/* { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.props.handleClick}/> )) }
-              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} handleClick={this.props.handleClick}/> )) }
-              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} handleClick={this.props.handleClick}/> )) }
-              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} handleClick={this.props.handleClick}/> )) } */}
+              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
             </div>
           </div>
-          <Project />
+          <Project article={this.state.article} />
           <div className='bulletin__footer'>
             <Social/>
           </div>
