@@ -17,12 +17,12 @@ class App extends Component {
         literature: [],
         technical: []
       },
-      articles: {}
+      projects: {}
     }
   }
   componentDidMount(){
     this._getPosts();
-    this._getArticles();
+    this._getProjects();
   }
   _getPosts () {
     axios(`https://elbulletin-db.herokuapp.com/api/posts/`)
@@ -51,15 +51,14 @@ class App extends Component {
       });
     });
   }
-  _getArticles() {
+  _getProjects() {
     axios(`https://elbulletin-db.herokuapp.com/api/articles/`)
 		.then(({data}) => {
-      let articles = data.data;
-      console.log('articles', articles);
+      let projects = data.data;
       
       this.setState({
         isLoaded: true,
-        articles: articles
+        projects: projects
       });
     }, (err) =>{
       this.setState({
@@ -72,7 +71,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} articles={this.state.articles} />
+          <Bulletin posts={this.state.posts} projects={this.state.projects} />
         </div>
       </Router>
     );

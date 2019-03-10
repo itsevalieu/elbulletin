@@ -44,10 +44,10 @@ class Post extends Component {
         console.log('posts render');
         return (
             <Link to={`${this.props.post.article}`}>
-                <div className='post' onClick={this.props.handleClick} data-article={this.props.post.article} style={postStyle}>
+                <div className='post' onClick={this.props.handleClick} data-project={this.props.post.article} style={postStyle}>
                     <div className='pushpin' style={pinColor}></div>
-                    <p data-article={this.props.post.article}>{this.props.post.title}</p>
-                    <p data-article={this.props.post.article}>{this.props.post.summary}</p>
+                    <p data-project={this.props.post.article}>{this.props.post.title}</p>
+                    <p data-project={this.props.post.article}>{this.props.post.summary}</p>
                 </div>
             </Link>
         );

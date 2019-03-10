@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Link,
-  // Switch,
+  Switch,
   BrowserRouter as Router
 } from 'react-router-dom';
 import './Bulletin.css';
@@ -14,8 +14,8 @@ class Bulletin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articleId: '',
-      article: {},
+      projectId: '',
+      project: {},
       tabs: [
         {
           name: 'About',
@@ -53,18 +53,19 @@ class Bulletin extends Component {
   }
   handleClick(e) {
     this.setState({
-      articleId: e.target.dataset.article
+      projectId: e.target.dataset.project
     }, () => {
-      this._getArticle(this.state.articleId);
+      this._getProject(this.state.projectId);
     });
   }
-  _getArticle(id) {
+  _getProject(id) {
     if(id === '') return null;
-    let article = this.props.articles.filter( article => article._id === id);
+    let project = this.props.projects.filter( project => project._id === id);
+
     this.setState({
-      article: article[0]
+      project: project[0]
     });
-    if(this.state.article === '') return null;
+    if(this.state.project === '') return null;
   }
   componentDidUpdate(nextProps, nextState) {
     if(nextProps.posts === this.props.posts) {
@@ -75,20 +76,22 @@ class Bulletin extends Component {
   }
   render() {
     return (
-      // <Switch>
+      <Switch>
         <div className='bulletin'>
           <div className='bulletin__corkboard'>
             <div className='bulletin__header'>
               <Link to='/' className='bulletin__header--logo'>E.L Bulletin</Link>
             </div>
             <div className='bulletin__posts'>
-              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
-              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
-              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
-              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} articleId= {this.state.articleId}/> )) }
+              { this.props.posts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/> )) }
+              { this.props.posts.literature.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/> )) }
+              { this.props.posts.research.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/> )) }
+              { this.props.posts.technical.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/> )) }
             </div>
           </div>
-          <Project article={this.state.article} />
+          <div className='bulletin__chalkboard'>
+            <Project project={this.state.project} />
+          </div>
           <div className='bulletin__footer'>
             <Social/>
           </div>
@@ -98,7 +101,7 @@ class Bulletin extends Component {
             </div>
           </Router>
         </div>
-      // </Switch>
+      </Switch>
     );
   }
 }
