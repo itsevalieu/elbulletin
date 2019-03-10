@@ -22,6 +22,7 @@
   background-size: 100% 100%;
   border-right: 15px inset #714015;
   border-image: url("../../../../assets/border.jpg") 30 stretch;
+  min-height: 500px;
 }
 .bulletin__header {
   grid-area: header;
@@ -48,6 +49,7 @@
     font-size: 1.4em;
     list-style: none;
     padding: 2em;
+    min-height: 500px;
     font-family: 'Special Elite', 'serif';
     color: rgb(226, 226, 226);
     box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.6);
