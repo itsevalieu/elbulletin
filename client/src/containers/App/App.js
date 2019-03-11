@@ -11,12 +11,13 @@ class App extends Component {
     super();
     this.state = {
       isLoading: true,
-      posts: {
+      filteredPosts: {
         creative: [],
         research: [],
         literature: [],
         technical: []
       },
+      posts: [],
       projects: {}
     }
   }
@@ -27,16 +28,17 @@ class App extends Component {
   _getPosts () {
     axios(`https://elbulletin-db.herokuapp.com/api/posts/`)
 		.then(({data}) => {
-      let results = data.data;
-      let creativeResults = results.filter(post => post.category === 'creative');
-      let researchResults = results.filter(post => post.category === 'research');
-      let literatureResults = results.filter(post => post.category === 'literature');
-      let technicalResults = results.filter(post => post.category === 'technical');
-      let projectResults = results.filter(post => post.category === 'project');
+      let posts = data.data;
+      let creativeResults = posts.filter(post => post.category === 'creative');
+      let researchResults = posts.filter(post => post.category === 'research');
+      let literatureResults = posts.filter(post => post.category === 'literature');
+      let technicalResults = posts.filter(post => post.category === 'technical');
+      let projectResults = posts.filter(post => post.category === 'project');
     
       this.setState({
         isLoading: false,
-        posts: {
+        posts: posts,
+        filteredPosts: {
           creative: creativeResults,
           research: researchResults,
           literature: literatureResults,
@@ -69,11 +71,9 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
         <div className="App">
-          <Bulletin posts={this.state.posts} projects={this.state.projects} />
+          <Bulletin posts={this.state.posts} filteredPosts={this.state.filteredPosts} projects={this.state.projects} />
         </div>
-      </Router>
     );
   }
 }

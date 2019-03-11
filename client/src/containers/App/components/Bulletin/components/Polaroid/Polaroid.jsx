@@ -3,6 +3,7 @@ import './Polaroid.css';
 
 class Polaroid extends Component {
     render() {
+        console.log('polar');
         return (
             <div className='polaroid'>
                 Polaroid
