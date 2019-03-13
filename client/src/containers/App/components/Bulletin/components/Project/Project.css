@@ -13,13 +13,10 @@
     border-radius: 50%;
     box-shadow: 2px 3px 2px 1px #222;
     position: relative;
-    top: 150px;
-    left: 250px;
     transform: rotate(5deg);
 }
 .project__icon--github {
-    top: 120px;
-    left: 200px;
+    top: 50px;
     padding: 0px;
     background-image: none;
     background: none;

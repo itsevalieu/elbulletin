@@ -5,24 +5,24 @@ import githubRound from '../../../../../../assets/github-round.png';
 
 class Project extends Component {
   componentDidUpdate(prevProps) {
-    if (this.props.article !== prevProps.article) {
-      console.log('render updatlled');
+    if (this.props.project !== prevProps.project) {
+      console.log('render updated');
     } else {
-      console.log(this.props.article);
+      console.log('render did not update', this.props.project);
     }
   }
   render() {
-    if(this.props.article === '' || this.props.article === undefined) return null;
+    if(this.props.project === '' || this.props.project === undefined) return null;
 
     return (
-        <div className='bulletin__chalkboard'>
+        <div>
           <div className='project'>
-            <p className='project__title'>{this.props.article.title}</p>
-            <p className='project__year'>{this.props.article.year}</p>
-            <p className='project__body'>{this.props.article.summary}</p>  
+            <p className='project__title'>{this.props.project.title}</p>
+            <p className='project__year'>{this.props.project.year}</p>
+            <p className='project__body'>{this.props.project.summary}</p>  
           </div>
-          <a className='project__link' href={this.props.article.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--gdrive' src={gdrive} alt='icon'/></a>
-          <a className='project__link' href={this.props.article.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--github' src={githubRound} alt='icon'/></a>
+          <a className='project__link' href={this.props.project.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--gdrive' src={gdrive} alt='icon'/></a>
+          <a className='project__link' href={this.props.project.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--github' src={githubRound} alt='icon'/></a>
         </div>
     );
   }
