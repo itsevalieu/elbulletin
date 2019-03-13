@@ -18,22 +18,34 @@
   border-radius: 1px; 
 }
 .tab1 {
-    top: 100px;
+  top: 100px;
 }
 .tab2 {
   top: 150px;
 }
 .tab3 {
   top: 200px;
+  width: 65px;
+  left: -55px;
+  background:#ffbcd9;
 }
 .tab4 {
   top: 250px;
+  width: 65px;
+  left: -55px;
+  background: #ccff00;
 }
 .tab5 {
   top: 300px;
+  width: 65px;
+  left: -55px;
+  background: #00b9fb;
 }
 .tab6 {
   top: 350px;
+  width: 65px;
+  left: -55px;
+  background: #ffcc00;
 }
 @media (max-width: 767px) {
   .tab {
