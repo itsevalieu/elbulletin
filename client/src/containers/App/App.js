@@ -71,11 +71,9 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
         <div className="App">
           <Bulletin posts={this.state.posts} filteredPosts={this.state.filteredPosts} projects={this.state.projects} />
         </div>
-      </Router>
     );
   }
 }
