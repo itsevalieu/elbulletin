@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import {
   Link,
   Route,
-<<<<<<< HEAD
   Switch
-=======
-  Switch,
-  BrowserRouter as Router
->>>>>>> b2fa964cf1fb81c8bc5cb3421b048710d24bc490
 } from 'react-router-dom';
 import './Bulletin.css';
 import Post from './components/Post/Post';
