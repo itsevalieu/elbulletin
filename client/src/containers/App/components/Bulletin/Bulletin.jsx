@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
   Link,
   Route,
-  Switch,
-  BrowserRouter as Router
+  Switch
 } from 'react-router-dom';
 import './Bulletin.css';
 import Post from './components/Post/Post';
@@ -31,28 +30,27 @@ class Bulletin extends Component {
         },
         {
           name: 'Creative Writing',
-          href: '/creative_writing',
+          href: '/portfolio/creative_writing',
           class: 'tab3'
         },
         {
           name: 'Literature Analysis',
-          href: '/literature_analysis',
+          href: '/portfolio/literature_analysis',
           class: 'tab4'
         },
         {
           name: 'Research Papers',
-          href: '/research_papers',
+          href: '/portfolio/research_papers',
           class: 'tab5'
         },
         {
           name: 'Web Development',
-          href: '/web_development',
+          href: '/portfolio/web_development',
           class: 'tab6'
         }
       ]
     }
     this.handleClick = this.handleClick.bind(this);
-    // this.creative = this.creative.bind(this);
   }
   handleClick(e) {
     this.setState({
@@ -77,15 +75,12 @@ class Bulletin extends Component {
       return true;
     }
   }
-  // Creative() {
-  //   console.log('creat');
-  //   return this.props.filteredPosts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
-  // };
-  render() {
-    
+  
+  render() { 
     console.log(this.props.filteredPosts.literature);
+    const { match } = this.props;
+    console.log(this.props);
     return (
-      <Router>
       <div className='bulletin'>
         <div className='bulletin__corkboard'>
           <div className='bulletin__header'>
@@ -93,40 +88,48 @@ class Bulletin extends Component {
           </div>
           <div className='bulletin__posts'>
             <Switch>
-              <Route exact path='/' render={() => (
-                this.props.posts.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
+              <Route exact path='/' render={(props) => (
+                this.props.posts.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/about' component={Polaroid} />
-              <Route path='/portfolio' render={() => (
-                this.props.posts.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
+              <Route exact path='/about' component={Polaroid} />
+              <Route exact path='/portfolio' render={(props) => (
+                this.props.posts.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/creative_writing'><div>{this.props.filteredPosts.creative.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))}</div></Route>
-              <Route path='/literature_analysis' render={() => (
-                this.props.filteredPosts.literature.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
+              <Route path='/portfolio/creative_writing' render={(props) => (
+                this.props.filteredPosts.creative.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/research_papers' render={() => (
-                this.state.filteredPosts.research.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
+              <Route path='/portfolio/literature_analysis' render={(props) => (
+                this.props.filteredPosts.literature.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/web_development' render={() => (
-                this.props.filteredPosts.technical.map((post, index) => ( <Post key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
+              <Route path='/portfolio/research_papers' render={(props) => (
+                this.props.filteredPosts.research.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-          </Switch>
+              <Route path='/portfolio/web_development' render={(props) => (
+                this.props.filteredPosts.technical.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
+              )}/>
+            </Switch>
           </div>
         </div>
         <div className='bulletin__chalkboard'>
-          <Project project={this.state.project} />
+          <Switch>
+            <Route path={`/`} render={() => (
+              <Project project={this.state.project} />
+            )}/>
+            <Route path={`/portfolio`} render={() => (
+              <Project project={this.state.project} />
+            )}/>
+            <Route path={`/portfolio/:category`} render={() => (
+              <Project project={this.state.project} />
+            )}/>
+          </Switch>
         </div>
         <div className='bulletin__footer'>
           <Social/>
         </div>
-
-        <Router>
           <div className='bulletin__tab'>
             { this.state.tabs.map((tab, index) =>(<Tab key={index} tab={tab} />))}
           </div>
-        </Router>
       </div>
-      </Router>
     );
   }
 }

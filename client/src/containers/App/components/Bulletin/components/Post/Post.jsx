@@ -43,7 +43,7 @@ class Post extends Component {
         }
         console.log('posts render');
         return (
-            <Link to={`${this.props.post.article}`}>
+            <Link to={`/${this.props.match.url}`}>
                 <div className='post' onClick={this.props.handleClick} data-project={this.props.post.article} style={postStyle}>
                     <div className='pushpin' style={pinColor}></div>
                     <p data-project={this.props.post.article}>{this.props.post.title}</p>
