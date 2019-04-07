@@ -41,9 +41,9 @@ class Post extends Component {
             backgroundColor: bkgdColor,
             transform: `rotateZ(${randomDeg})`
         }
-        console.log('posts render');
+        // console.log('posts render');
         return (
-            <Link to={`/${this.props.match.url}`} class='post_link'>
+            <Link to={`/${this.props.match.url}`}>
                 <div className='post' onClick={this.props.handleClick} data-project={this.props.post.article} style={postStyle}>
                     <div className='pushpin' style={pinColor}></div>
                     <p data-project={this.props.post.article}>{this.props.post.title}</p>
