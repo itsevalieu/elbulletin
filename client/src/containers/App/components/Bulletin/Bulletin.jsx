@@ -9,7 +9,7 @@ import Post from './components/Post/Post';
 import Project from './components/Project/Project';
 import Social from './components/Social/Social';
 import Tab from './components/Tab/Tab';
-import Polaroid from './components/Polaroid/Polaroid';
+// import Polaroid from './components/Polaroid/Polaroid';
 
 class Bulletin extends Component {
   constructor(props) {
@@ -78,9 +78,9 @@ class Bulletin extends Component {
   }
   
   render() { 
-    console.log(this.props.filteredPosts.literature);
-    const { match } = this.props;
-    console.log(this.props);
+    // console.log(this.props.filteredPosts.literature);
+    // const { match } = this.props;
+    // console.log(this.props);
     return (
       <div className='bulletin'>
         <div className='bulletin__corkboard'>

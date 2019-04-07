@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './Project.css';
 import gdrive from '../../../../../../assets/gdrive.png';
-import githubRound from '../../../../../../assets/github-round.png';
+// import githubRound from '../../../../../../assets/github-round.png';
 
 class Project extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.project !== prevProps.project) {
-      console.log('render updated');
+      // console.log('render updated');
     } else {
-      console.log('render did not update', this.props.project);
+      // console.log('render did not update', this.props.project);
     }
   }
   render() {
