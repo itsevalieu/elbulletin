@@ -27,25 +27,25 @@
   top: 200px;
   width: 65px;
   left: -55px;
-  background:#ffbcd9;
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 .tab4 {
   top: 250px;
   width: 65px;
   left: -55px;
-  background: #ccff00;
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 .tab5 {
   top: 300px;
   width: 65px;
   left: -55px;
-  background: #00b9fb;
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 .tab6 {
   top: 350px;
   width: 65px;
   left: -55px;
-  background: #ffcc00;
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 @media (max-width: 767px) {
   .tab {
