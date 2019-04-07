@@ -1,5 +1,15 @@
+.project {
+    white-space: wrap;
+    overflow: scroll;
+    text-overflow: ellipsis;    
+}
+.project__title {
+    text-transform: uppercase;
+}
 .project__title, .project__year, .project__body {
     white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .project__link {
     border-radius: 50%;
