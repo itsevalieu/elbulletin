@@ -18,36 +18,36 @@ class Bulletin extends Component {
       projectId: '',
       project: {},
       tabs: [
+        // {
+        //   name: 'About',
+        //   href: '/about',
+        //   class: 'tab1'
+        // },
+        // {
+        //   name: 'Portfolio',
+        //   href: '/portfolio',
+        //   class: 'tab2'
+        // },
         {
-          name: 'About',
-          href: '/about',
+          name: 'Creative Writing',
+          href: '/creative_writing',
           class: 'tab1'
         },
         {
-          name: 'Portfolio',
-          href: '/portfolio',
+          name: 'Literature Analysis',
+          href: '/literature_analysis',
           class: 'tab2'
         },
         {
-          name: 'Creative Writing',
-          href: '/portfolio/creative_writing',
+          name: 'Research Papers',
+          href: '/research_papers',
           class: 'tab3'
         },
-        {
-          name: 'Literature Analysis',
-          href: '/portfolio/literature_analysis',
-          class: 'tab4'
-        },
-        {
-          name: 'Research Papers',
-          href: '/portfolio/research_papers',
-          class: 'tab5'
-        },
-        {
-          name: 'Web Development',
-          href: '/portfolio/web_development',
-          class: 'tab6'
-        }
+        // {
+        //   name: 'Web Development',
+        //   href: '/web_development',
+        //   class: 'tab4'
+        // }
       ]
     }
     this.handleClick = this.handleClick.bind(this);
@@ -91,22 +91,22 @@ class Bulletin extends Component {
               <Route exact path='/' render={(props) => (
                 this.props.posts.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route exact path='/about' component={Polaroid} />
+              {/* <Route exact path='/about' component={Polaroid} />
               <Route exact path='/portfolio' render={(props) => (
                 this.props.posts.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
-              )}/>
-              <Route path='/portfolio/creative_writing' render={(props) => (
+              )}/> */}
+              <Route path='/creative_writing' render={(props) => (
                 this.props.filteredPosts.creative.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/portfolio/literature_analysis' render={(props) => (
+              <Route path='/literature_analysis' render={(props) => (
                 this.props.filteredPosts.literature.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/portfolio/research_papers' render={(props) => (
+              <Route path='/research_papers' render={(props) => (
                 this.props.filteredPosts.research.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
               )}/>
-              <Route path='/portfolio/web_development' render={(props) => (
+              {/* <Route path='/web_development' render={(props) => (
                 this.props.filteredPosts.technical.map((post, index) => ( <Post {...props} key={index} post={post} handleClick={this.handleClick} projectId= {this.state.projectId}/>))
-              )}/>
+              )}/> */}
             </Switch>
           </div>
         </div>
@@ -115,10 +115,10 @@ class Bulletin extends Component {
             <Route path={`/`} render={() => (
               <Project project={this.state.project} />
             )}/>
-            <Route path={`/portfolio`} render={() => (
+            {/* <Route path={`/portfolio`} render={() => (
               <Project project={this.state.project} />
-            )}/>
-            <Route path={`/portfolio/:category`} render={() => (
+            )}/> */}
+            <Route path={`/:category`} render={() => (
               <Project project={this.state.project} />
             )}/>
           </Switch>
