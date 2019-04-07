@@ -22,7 +22,7 @@ class Project extends Component {
             <p className='project__body'>{this.props.project.summary}</p>  
           </div>
           <a className='project__link' href={this.props.project.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--gdrive' src={gdrive} alt='icon'/></a>
-          <a className='project__link' href={this.props.project.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--github' src={githubRound} alt='icon'/></a>
+          {/* <a className='project__link' href={this.props.project.body} target='_blank' rel='noopener noreferrer'><img className='project__icon project__icon--github' src={githubRound} alt='icon'/></a> */}
         </div>
     );
   }

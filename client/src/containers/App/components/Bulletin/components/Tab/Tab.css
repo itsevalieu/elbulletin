@@ -25,27 +25,27 @@
 }
 .tab3 {
   top: 200px;
-  width: 65px;
-  left: -55px;
-  background:#ffbcd9;
+  /* width: 65px; */
+  /* left: -55px; */
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 .tab4 {
   top: 250px;
-  width: 65px;
-  left: -55px;
-  background: #ccff00;
+  /* width: 65px; */
+  /* left: -55px; */
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 .tab5 {
   top: 300px;
-  width: 65px;
+  /* width: 65px; */
   left: -55px;
-  background: #00b9fb;
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 .tab6 {
   top: 350px;
-  width: 65px;
+  /* width: 65px; */
   left: -55px;
-  background: #ffcc00;
+  background: linear-gradient(to right, #ffff99, #e9e98a, #dbdb82)
 }
 @media (max-width: 767px) {
   .tab {
@@ -60,14 +60,17 @@
   }
   .tab1 {
     top: 75px;
+    left: -27px;
   }
   .tab2 {
     top: 125px;
+    left: -27px;
   }
   .tab3 {
     top: 175px;
+    left: -27px;
   }
-  .tab4 {
+  /* .tab4 {
     top: 225px;
   }
   .tab5 {
@@ -75,5 +78,5 @@
   }
   .tab6 {
     top: 325px;
-  }
+  } */
 }
